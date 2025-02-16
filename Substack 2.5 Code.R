@@ -36,8 +36,7 @@ sbwrdata2 = nfldata %>%
            receiver_player_name == "A.Brown" | receiver_player_name == "D.Smith" |
            receiver_player_name == "D.Goedert" | receiver_player_name == "S.Barkley") %>%
   group_by(receiver_player_id, receiver_player_name) %>%
-  summarize(rec_reg = n(),
-  ) %>%
+  summarize(rec_reg = n()) %>%
   print(n = Inf)
 
 # join the regular season tibbles
