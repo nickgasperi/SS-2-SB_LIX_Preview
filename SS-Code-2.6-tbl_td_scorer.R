@@ -65,7 +65,7 @@ sbtdsplot1 = gt(sbtdsdata) %>%
               columns = "tdodds") %>%
   tab_footnote(footnote = md("By Nick Gasperi | @tbanalysis | Data @nflfastR")) %>%
   tab_options(footnotes.font.size = 12) %>%
-  gt_nfl_headshots(columns = "td_player_id", height = 60) %>%
+  gt_nfl_headshots(columns = "td_player_id", height = 65) %>%
   gt_theme_espn() %>%
   opt_align_table_header(align = "center") %>%
   tab_style(style = cell_text(weight = "bold"),
@@ -73,3 +73,7 @@ sbtdsplot1 = gt(sbtdsdata) %>%
 
 # view table
 sbtdsplot1
+
+# save table
+# use 'expand' to prevent sides of table from being cut out of .png export
+sbtdsplot1 %>% gtsave("SubSt2.6 - gt_sb_td_odds.png", expand = 12)
