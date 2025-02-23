@@ -5,6 +5,7 @@ library(nflfastR)
 library(nflplotR)
 library(nflreadr)
 library(ggplot2)
+library(ggrepel)
 
 # pull 2024 NFL game results
 schedules1 = fast_scraper_schedules(2024)
