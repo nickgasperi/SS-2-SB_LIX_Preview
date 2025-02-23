@@ -17,7 +17,7 @@ teamstats2 = schedules1 %>%
   select(game_type, week, away_team, away_score, home_team, home_score, result) %>%
   print(n = Inf)
 
-# add kc_result column
+# add kc cum_result column
 teamstats2$kc_result = ifelse(teamstats2$home_team == "KC", teamstats2$result, teamstats2$result*(-1))
 
 # add point diff cumulative sum column
@@ -42,7 +42,7 @@ teamstats3 = schedules1 %>%
   select(game_type, week, away_team, away_score, home_team, home_score, result) %>%
   print(n = Inf)
 
-# add phi_result column
+# add phi cum_result column
 teamstats3$phi_result = ifelse(teamstats3$home_team == "PHI", teamstats3$result, teamstats3$result*(-1))
 
 # add point diff cumulative sum column
