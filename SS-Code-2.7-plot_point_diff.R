@@ -78,20 +78,31 @@ scorediff1 = ggplot(data = teamstats5, aes(x = week, y = cum_result)) +
   geom_point(data = frameteams5,
              aes(color = team),
              size = 2.5) +
-  geom_text_repel(data = frameteams5,
+  geom_text_repel(box.padding = 0.6,
+                  min.segment.length = 1.5,
+                  data = frameteams5,
                   aes(label = cum_result,
                       color = team,
                       fontface = "bold.italic"),
-                  size = 6.5) +
+                  size = 10) +
   scale_color_nfl(type = "primary") +
   scale_x_continuous(n.breaks = 8) +
+  labs(title = "Cumulative Point Differential - KC vs. PHI",
+       subtitle = "2024 Regular & Post Season",
+       caption = "By Nick Gasperi | @tbanalysis | Data @nflfastR",
+       x = "Week", y = "Cumulative Point Differential") +
   theme_minimal() +
-  theme(plot.background = element_rect(fill = "#F0F0F0"))
+  theme(plot.background = element_rect(fill = "cornsilk"),
+        plot.title = element_text(face = "bold", size = 18),
+        plot.subtitle = element_text(face = "bold", size = 16),
+        plot.caption = element_text(size = 11),
+        axis.title = element_text(face = "bold", size = 15),
+        axis.text = element_text(size = 15))
 
 # view plot
 scorediff1
 
 # save plot
 ggsave("SubSt2.7 - point_diff.png",
-       width = 10.5, height = 7, dpi = "retina")
+       width = 10.5, height = 7.5, dpi = "retina")
   
