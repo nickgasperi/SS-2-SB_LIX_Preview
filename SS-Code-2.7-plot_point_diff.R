@@ -93,8 +93,8 @@ scorediff1 = ggplot(data = teamstats5, aes(x = week, y = cum_result)) +
        x = "Week", y = "Point Differential") +
   theme_minimal() +
   theme(plot.background = element_rect(fill = "cornsilk"),
-        plot.title = element_text(face = "bold", size = 18),
-        plot.subtitle = element_text(face = "bold", size = 16),
+        plot.title = element_text(face = "bold", size = 22),
+        plot.subtitle = element_text(face = "bold", size = 20),
         plot.caption = element_text(size = 11),
         axis.title = element_text(face = "bold", size = 15),
         axis.text = element_text(size = 15))
