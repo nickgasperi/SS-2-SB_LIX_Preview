@@ -90,7 +90,7 @@ scorediff1 = ggplot(data = teamstats5, aes(x = week, y = cum_result)) +
   labs(title = "Cumulative Point Differential - KC vs. PHI",
        subtitle = "2024 Regular & Post Season",
        caption = "By Nick Gasperi | @tbanalysis | Data @nflfastR",
-       x = "Week", y = "Cumulative Point Differential") +
+       x = "Week", y = "Point Differential") +
   theme_minimal() +
   theme(plot.background = element_rect(fill = "cornsilk"),
         plot.title = element_text(face = "bold", size = 18),
