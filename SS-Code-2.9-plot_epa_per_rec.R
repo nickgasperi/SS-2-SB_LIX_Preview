@@ -19,6 +19,7 @@ sbeparec = nfldata %>%
   summarize(tgts = n(),
             epaper = sum(epa)/sum(tgts)) %>%
   arrange(-tgts) %>%
+  filter(tgts >= 50) %>%
   print(n = Inf)
 
 # plot data
@@ -32,19 +33,22 @@ eparecplot2 = ggplot(data = sbeparec, aes(x = epaper,
   scale_color_nfl(type = "primary") +
   geom_nfl_logos(aes(team_abbr = posteam), width = 0.07) +
   labs(title = "EPA Per Target - KC & PHI",
-       subtitle = "2024 NFL Regular & Post Season",
+       subtitle = "2024 NFL Regular & Post Season (min. 50 targets)",
        caption = "By Nick Gasperi | @tbanalysis | Data @nflfastR",
        x = "EPA/Target", y = "") +
   theme_minimal() +
   theme(plot.background = element_rect(fill= "#F0F0F0"),
         plot.title = element_text(hjust = 0.5, face = "bold", size = 20),
-        plot.subtitle = element_text(hjust = 0.5, face = "bold", size = 18),
+        plot.subtitle = element_text(hjust = 0.5, face = "bold", size = 16),
         plot.caption = element_text(size = 11),
         axis.title.y = element_blank(),
-        axis.text.y = element_nfl_headshot(size = 2.85),
+        axis.text.y = element_nfl_headshot(size = 2.5),
         axis.title.x = element_text(face = "bold.italic", size = 15),
         axis.text.x = element_text(size = 15))
 
 # view plot
 eparecplot2
 
+# save plot
+ggsave("SubSt2.9 - epa_per_target.png",
+       width = 10.5, height = 7.5, dpi = "retina")
